@@ -12,6 +12,10 @@ Continue by [downloading JQuery](http://jquery.com/download/) and choose the unc
 
 Create a few folder inside your project directory called `js` and put your newly downloaded JQuery file in that folder. While you're there, create a new, empty file called `scripts.js`. This is where all of your Javascript and JQuery will go.
 
+
+##What is Javascript?
+Javascript is a programming language that's built-in to web browsers. It enables a user to interact with a website (and vice versa). In Javascript, you can do all kinds of basic programming logic, like loops and if statements. While incredibly fun and interesting, that kind of programming logic is a bit harder to find a practical use for when building a simple website. That's why today we'll be focusing on the interactive potential of Javascript using JQuery, a Javascript library that makes it easier to use. If you want to learn more about Javascript as a programming language, there are many online resources available, including [Code Academy](http://www.codecademy.com/en/tracks/javascript).
+
 ##Writing Code
 
 Open your `index.html` file in Sublime and put the following HTML right inside `<head>` tags.
@@ -25,7 +29,7 @@ These tell our HTML where to find the javascript resources we're going to provid
 
 Now open your `scripts.js` file in Sublime as well.
 
-Let's use some JQuery to interact with an element on our page. First let's take a look at how the images on the page are coded in the HTML.
+Let's use some JQuery to interact with an image element on our page. First let's take a look at how the images on the page are coded in the HTML.
 
 ```html
 <div class="row">
@@ -76,21 +80,3 @@ Now let's create some content that we want to see when we click the top left han
         </div>
     </div>
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
