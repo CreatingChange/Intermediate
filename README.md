@@ -16,8 +16,10 @@ Create a few folder inside your project directory called `js` and put your newly
 
 Open your `index.html` file in Sublime and put the following HTML right inside `<head>` tags.
 
-```HTML<script src="../js/jquery-1.11.2.js"></script>
-<script src="../js/scripts.js"></script>```
+```html
+<script src="../js/jquery-1.11.2.js"></script>
+<script src="../js/scripts.js"></script>
+```
 
 These tell our HTML where to find the javascript resources we're going to provide both from our code and JQuery. It's important that our own `scripts.js` file goes after jQuery, as it will rely on jQuery functionality that must be loaded first.
 
@@ -25,16 +27,20 @@ Now open your `scripts.js` file in Sublime as well.
 
 Let's use some JQuery to interact with an element on our page. First let's take a look at how the images on the page are coded in the HTML.
 
-```HTML <div class="row">
+```html
+<div class="row">
     <img class="image_1" src="img/rsz_image_1.jpg" alt="Are you a boy or girl? No.">
     <img class="image_1" src="img/rsz_image_1.jpg" alt="Are you a boy or girl? No.">
-</div>````
+</div>
+```
 
 Elements like `<img>` tags can have attributes assigned to them through class and id values. These let us locate a specific element and use Javascript and JQuery to interact with them. Inside your `scripts.js` file now type:
 
-```javascript $(".image_1").hover(function() {
+```javascript
+$(".image_1").hover(function() {
 
-    });```
+    });
+```
 
 If we break this down there are several parts to even this small bit of code. `$(".image_1")` means that using JQuery we're going to look for an interaction with any page element with a class of "image_1". The `$` is simply a much shorter way of saying `jQuery` which you'll be seeing a lot in this lesson.
 
@@ -56,12 +62,14 @@ The empty line between the `{` and the `}` is where we'll be placing the code th
 
 Now let's create some content that we want to see when we hover over the top left hand image. Go back to your `index.html` file and place the `<p>` tag where you see it in the code snippet below.
 
-```HTML <div class="col-md-6">
+```html
+<div class="col-md-6">
     <div class="row">
         <img class="image_1" src="img/rsz_image_1.jpg" alt="Are you a boy or girl? No.">
         <p id="hover_text">Are you a boy or a girl? No.</p>
         <img class="image_1" src="img/rsz_image_1.jpg" alt="Are you a boy or girl? No.">
-    </div>```
+    </div>
+```
 
 
 
