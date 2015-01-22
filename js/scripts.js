@@ -3,4 +3,9 @@ $(document).ready(function() {
         $("#click_image").show();
         $(".hide_this").hide();
     });
+
+    $("#click_image").click(function() {
+        $(".hide_this").show();
+        $("#click_image").hide();
+    });
 });

@@ -41,7 +41,7 @@ Let's use some JQuery to interact with an image element on our page. First let's
 
 Elements like `<img>` tags can have attributes assigned to them through class and id values. These let us locate a specific element and use Javascript and JQuery to interact with them. Inside your `scripts.js` file now type:
 
-```jquery
+```javascript
 $(".image_1").click(function() {
 
     });
@@ -80,3 +80,24 @@ Now let's create some content that we want to see when we click the top left han
         </div>
     </div>
 ```
+
+##Additional Functionality
+
+You might have noticed by now that, while you can click to make the hidden image replace the original, clicking again will not swap them back. This is a relatively simple matter of reversing our JQuery. We have all the infrastructure we need in the tags, classes, and ids that we need in our HTML already. Place this `.click()` in its place on the `scripts.js` page between the first and second closing `});`.
+
+```javascript
+$("#click_image").click(function() {
+    $(".hide_this").show();
+    $("#click_image").hide();
+});
+```
+This should be all that's required to impliment the "return click" functionality that was previously lacking.
+
+
+
+
+
+
+
+
+
