@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $(".image_1").hover(function() {
-        $("p").show();
+    $(".image_1").click(function() {
+        $("#hover_text").show();
     });
 });
