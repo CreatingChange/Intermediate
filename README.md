@@ -29,26 +29,27 @@ Let's use some JQuery to interact with an element on our page. First let's take 
 
 ```html
 <div class="row">
-    <img class="image_1" src="img/rsz_image_1.jpg" alt="Are you a boy or girl? No.">
-    <img class="image_1" src="img/rsz_image_1.jpg" alt="Are you a boy or girl? No.">
-</div>
+    <div class="hide_this">
+        <img class="image_1" src="img/rsz_image_1.jpg" alt="Are you a boy or girl? No.">
+        <img class="image_1" src="img/rsz_image_1.jpg" alt="Are you a boy or girl? No.">
+    </div>
 ```
 
 Elements like `<img>` tags can have attributes assigned to them through class and id values. These let us locate a specific element and use Javascript and JQuery to interact with them. Inside your `scripts.js` file now type:
 
-```javascript
-$(".image_1").hover(function() {
+```jquery
+$(".image_1").click(function() {
 
     });
 ```
 
 If we break this down there are several parts to even this small bit of code. `$(".image_1")` means that using JQuery we're going to look for an interaction with any page element with a class of "image_1". The `$` is simply a much shorter way of saying `jQuery` which you'll be seeing a lot in this lesson.
 
-When listening or styling elements a period is used for classes and a pound sign (hash) is used for ids. Classes can be used over and over again on many different elements in one page. Ids are expected to be unique.
+When locating or styling elements a period is used for classes and a pound sign (hash) is used for ids. Classes can be used over and over again on many different elements in one page. Ids are expected to be unique.
 
-The next section, the `.hover(function()` section says what specific action to listen for. In this case we're looking for the cursor to roll over an element but many different options exist including:
+The next section, the `.click(function()` section says what specific action to listen for. In this case we're looking for the cursor to click on an element but many different options exist including:
 
-    * `.click()`
+    * `.hover()`
     * `.dblclick()`
     * `.show()`
     * `.focus()`
@@ -60,14 +61,19 @@ The empty line between the `{` and the `}` is where we'll be placing the code th
 
 ##Complete the Functionality
 
-Now let's create some content that we want to see when we hover over the top left hand image. Go back to your `index.html` file and place the `<p>` tag where you see it in the code snippet below.
+Now let's create some content that we want to see when we click the top left hand image. Go back to your `index.html` file and place everything inside of the `<div id=click_image>` and `</div>` tags where you see it in the code snippet below.
 
 ```html
 <div class="col-md-6">
     <div class="row">
-        <img class="image_1" src="img/rsz_image_1.jpg" alt="Are you a boy or girl? No.">
-        <p id="hover_text">Are you a boy or a girl? No.</p>
-        <img class="image_1" src="img/rsz_image_1.jpg" alt="Are you a boy or girl? No.">
+        <div class="hide_this">
+            <img class="image_1" src="img/rsz_image_1.jpg" alt="Are you a boy or girl? No.">
+            <img class="image_1" src="img/rsz_image_1.jpg" alt="Are you a boy or girl? No.">
+        </div>
+        <div id="click_image">
+            <img class="image_2" src="img/rsz_trans_symbol.jpg" alt="Trans Symbol">
+            <img class="image_1" src="img/rsz_image_1.jpg" alt="Are you a boy or girl? No.">
+        </div>
     </div>
 ```
 
