@@ -94,6 +94,42 @@ $("#click_image").click(function() {
 This should be all that's required to impliment the "return click" functionality that was previously lacking.
 
 
+##Adjust the Font Size on the Fly
+
+Let's examine an example of how you might use this new knowledge to increase user access. It's not uncommon for web designers to spend very little time thinking about the design choices they've made and how that might impact users of different ability levels. One very basic example might be using an extrordinarily small font size. We can add the ability to adjust the font size on the fly with JQuery.
+
+First, let's physically add the buttons to our navbar. Find the section of the HTML just below:
+
+```html
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      </ul>
+</div>
+```
+Once you've found it, add this bit of HTML.
+
+```html
+<div class="navbar-right font-size">
+    <p class="navbar-text">Adjust Font Size</p>
+    <button type="button" class="btn btn-default navbar-btn">-</button>
+    <button type="button" class="btn btn-default navbar-btn">+</button>
+</div>
+```
+What we're doing here is adding two buttons to increase and decrease font size respectively. They don't function yet, that's what the JQuery will be doing. We've wrapped both these buttons in a separate `<div>` tag so that we can push them to the right inside the navbar as a whole. `class="navbar-right"` is something bootstrap gives us. `font-size` is a class we've added on our own to hook the JQuery into in a moment.
+
+###Button Styling
+
+The `<p>` tag right after the above `<div>` is simply a label for our buttons so users know what they're for. Once again, the class that's attached is simply a preexisting bootstrap class that ensures our text is styled consistently with the rest of the navbar.
+
+If you look at the live version of your page at the moment, you'll see that your second button is hugged right up against the far right side of the navabar. Let's fix that quickly. Go into your `styles.css` file and add the code below:
+
+```css
+.font-size {
+    margin-right: 10px;
+}
+```
 
 
 
