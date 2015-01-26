@@ -147,7 +147,7 @@ That gets a bit more complicated than before, so let's take a look. The line wit
 
 The next line uses the `.css()` function which, like `.show()` and `.hide()` allow us to alter something; in this case the value of a css selector. We're telling it to alter the `font-size` selector that we had previously added to `styles.css`.
 
-<!-- At this point, I need help explaining "this" to new coders! Help! -->
+At this point, I need help explaining "this" to new coders! Help!
 
 Now if you reload your page you'll see that our "plus" button will increase the font size on the entire page! The problem you'll run into if you poke around for a minute is that the "minus" button doesn't work. It increases font size too! So let's make some changes.
 
