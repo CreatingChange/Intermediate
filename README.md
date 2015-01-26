@@ -21,8 +21,8 @@ Javascript is a programming language that's built-in to web browsers. It enables
 Open your `index.html` file in Sublime and put the following HTML right inside `<head>` tags.
 
 ```html
-<script src="../js/jquery-1.11.2.js"></script>
-<script src="../js/scripts.js"></script>
+<script src="js/jquery-1.11.2.js"></script>
+<script src="js/scripts.js"></script>
 ```
 
 These tell our HTML where to find the javascript resources we're going to provide both from our code and JQuery. It's important that our own `scripts.js` file goes after jQuery, as it will rely on jQuery functionality that must be loaded first.
