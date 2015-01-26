@@ -81,7 +81,7 @@ Now let's create some content that we want to see when we click the top left han
     </div>
 ```
 
-##Additional Functionality
+##More JQuery Functions
 
 You might have noticed by now that, while you can click to make the hidden image replace the original, clicking again will not swap them back. This is a relatively simple matter of reversing our JQuery. We have all the infrastructure we need in the tags, classes, and ids that we need in our HTML already. Place this `.click()` in its place on the `scripts.js` page between the first and second closing `});`.
 
@@ -131,9 +131,43 @@ If you look at the live version of your page at the moment, you'll see that your
 }
 ```
 
+###Button Functionality
 
+Now let's add some actual JQuery functionality to our buttons. Like before, we'll need to grab onto some sort of class or id and then add the functionality.
 
+```javascript
+$(".font-size").click(function() {
+    $(".container").css("font-size", function() {
+        return parseInt($(this).css('font-size')) + 1 + 'px';
+    });
+});
+```
 
+That gets a bit more complicated than before, so let's take a look. The line with the `.click` function works exactly as before. It's looking for a click activation on something with the class `font-size` and then executing the code that follows.
 
+The next line uses the `.css()` function which, like `.show()` and `.hide()` allow us to alter something; in this case the value of a css selector. We're telling it to alter the `font-size` selector that we had previously added to `styles.css`.
+
+<!-- At this point, I need help explaining "this" to new coders! Help! -->
+
+Now if you reload your page you'll see that our "plus" button will increase the font size on the entire page! The problem you'll run into if you poke around for a minute is that the "minus" button doesn't work. It increases font size too! So let's make some changes.
+
+###Button Differentiation
+
+Go ahead and change the `font-size` classes on your buttons to what you see below.
+
+```html
+<button type="button" class="btn btn-default navbar-btn font-size-down">-</button>
+<button type="button" class="btn btn-default navbar-btn font-size-up">+</button>
+```
+Because we need each button to do something different, we'll need a different bit of JQuery for each button. Edit your most recent JQuery code in the `scripts.js` file to hook onto `.font-size-up` instead of `.font-size`. Now copy that code and paste it right before the final closing brace in `scripts.js`. We'll need to change just a couple of things.
+
+```javascript
+$(".font-size-down").click(function() {
+    $(".container").css("font-size", function() {
+        return parseInt($(this).css('font-size')) - 1 + 'px';
+    });
+});
+```
+You'll notice that this bit hooks into the `.font-size-down` class that you added just a few minutes ago to the `index.html` file. Finally, the line that returns the changed number of pixels for the font size needs to now subtract one pixel instead of add one so that our button will decrease the page's font size.
 
 

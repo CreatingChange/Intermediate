@@ -8,4 +8,16 @@ $(document).ready(function() {
         $(".hide_this").show();
         $("#click_image").hide();
     });
+
+    $(".font-size-up").click(function() {
+        $(".container").css("font-size", function() {
+            return parseInt($(this).css('font-size')) + 1 + 'px';
+        });
+    });
+
+    $(".font-size-down").click(function() {
+        $(".container").css("font-size", function() {
+            return parseInt($(this).css('font-size')) - 1 + 'px';
+        });
+    });
 });
