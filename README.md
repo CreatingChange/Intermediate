@@ -1,16 +1,16 @@
 ##Getting Started
 
-Go to the [Project Folder](https://github.com/CreatingChange/Beginner) and click on the "Download ZIP" button in the right hand column. Navigate to where your computer has downloaded this file.
+Go to the [Beginner Project](https://github.com/CreatingChange/Beginner) and click on the "Download ZIP" button in the right hand column. Navigate to where your computer has downloaded this file.
 
-Double click on the new Zip file so that it will unzip and then move that folder into a location where you want to store your project. I have a folder I call "Code".
+Double click on the downloaded "Beginner-master" Zip file so that it will unzip and then move that folder into a location where you want to store your project. I have a folder I call "Code". You also may want to rename the "Beginner-master" folder to reflect the name of the website you're working on today.
 
 Next we need a program to edit text. Download [Sublime](www.sublimetext.com) and open it. There are many text editors available; this is just one that we like.
 
-Open your project folder in Sublime by right clicking it and selecting open with. In Sublime, you should see your project folder and your css folder.
+Run Sublime, then open your project folder ("Beginner-master" or whatever you renamed it). You should see the Beginner Project folder, which includes several folders and files.
 
 Continue by [downloading JQuery](http://jquery.com/download/) and choose the uncompressed, development version, 1.11.2. This should download to the same place the project did.
 
-Create a few folder inside your project directory called `js` and put your newly downloaded JQuery file in that folder. While you're there, create a new, empty file called `scripts.js`. This is where all of your Javascript and JQuery will go.
+Create a few folder inside your project folder called `js` and put your newly downloaded JQuery file in that folder. While you're there, create a new, empty file called `scripts.js`. This is where all of your Javascript and JQuery will go.
 
 
 ##What is Javascript?
