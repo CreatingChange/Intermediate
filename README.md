@@ -17,6 +17,16 @@ Finally, open index.html in your browser and check out the simple website that t
 ##What is Javascript?
 Javascript is a programming language that's built-in to web browsers. It enables a user to interact with a website (and vice versa). In Javascript, you can do all kinds of basic programming logic, like loops and if statements. While incredibly fun and interesting, that kind of programming logic is a bit harder to find a practical use for when building a simple website. That's why today we'll be focusing on the interactive potential of Javascript using JQuery, a Javascript library that makes it easier to use. If you want to learn more about Javascript as a programming language, there are many online resources available, including [Code Academy](http://www.codecademy.com/en/tracks/javascript).
 
+The first thing we're going to do is prepare our scripts.js file. We need to tell it to run our Javascript code only after the HTML has been read and the page is ready to be manipulated by user interaction. So all of the Javascript we'll be writing in this lesson will be within this function in scripts.js.
+
+```javascript
+$(document).ready(function() {
+
+});
+```
+
+If you'd like to learn more about why we need this, [JQuery has documentation](http://learn.jquery.com/using-jquery-core/document-ready/) that tells us that the function will be run when the [Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) is ready.
+
 ##Writing Code
 
 Open your `index.html` file in Sublime and put the following HTML right inside `<head>` tags.
