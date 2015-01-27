@@ -144,13 +144,13 @@ First, let's physically add the buttons to our navbar. Find the section of the H
       <li class="active"><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
-      </ul>
+    </ul>
 </div>
 ```
-Once you've found it, add this bit of HTML.
+Once you've found it, at the end of it, insert this bit of HTML. (It should still be within the `<div class="container-fluid"` but outside of `div class="navbar-header"`). We're adding some text and two butons, one labeled with a minus and the other with a plus.
 
 ```html
-<div class="navbar-right font-size">
+<div class="navbar-right font-adjust">
     <p class="navbar-text">Adjust Font Size</p>
     <button type="button" class="btn btn-default navbar-btn">-</button>
     <button type="button" class="btn btn-default navbar-btn">+</button>
@@ -165,17 +165,28 @@ The `<p>` tag right after the above `<div>` is simply a label for our buttons so
 If you look at the live version of your page at the moment, you'll see that your second button is hugged right up against the far right side of the navabar. Let's fix that quickly. Go into your `styles.css` file and add the code below:
 
 ```css
-.font-size {
+.font-adjust {
     margin-right: 10px;
 }
 ```
 
 ###Button Functionality
 
-Now let's add some actual JQuery functionality to our buttons. Like before, we'll need to grab onto some sort of class or id and then add the functionality.
+Now let's add some actual JQuery functionality to our buttons. Like before, we'll need to grab onto some sort of class or id and then add the functionality. Let's add a click event whenever someone clicks on something with the class "font-adjust". That part is like before. Now when that happens and the code inside the function is run, instead of showing or hiding something, we're going to change the css style of all text within the container class. Let's change it to something really big, like 50 pixels.
 
 ```javascript
-$(".font-size").click(function() {
+$(".font-adjust").click(function() {
+    $(".container").css("font-size", "50px");
+});
+```
+Wow! Much bigger.
+
+###Making It Relatively Bigger
+
+So what if we want the text to get bigger than it was before, not all uniformly huge?
+
+```javascript
+$(".font-adjust").click(function() {
     $(".container").css("font-size", function() {
         return parseInt($(this).css('font-size')) + 1 + 'px';
     });
