@@ -46,11 +46,15 @@ When locating or styling elements a period is used for classes and a pound sign 
 
 The next section, the `.click(function()` section says what specific action to listen for. In this case we're looking for the cursor to click on an element but many different options exist including:
 
-    * `.hover()`
-    * `.dblclick()`
-    * `.show()`
-    * `.focus()`
-    * `.keypress()`
+    * .hover()
+
+    * .dblclick()
+
+    * .show()
+
+    * .focus()
+
+    * .keypress()
 
 I bet you already have some idea what a lot of those do!
 
