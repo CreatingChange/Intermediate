@@ -42,12 +42,14 @@ Now open your `scripts.js` file in Sublime as well.
 
 Let's use some JQuery to interact with an image element on our page. Elements like `<img>` tags can have attributes assigned to them through class and id values. These let us locate a specific element and use Javascript and JQuery to interact with them. In index.html, note that all 6 of the images hava a class of "image_1". We can then reference that class when we're writing our Javascript code.
 
-Inside your `scripts.js` file now type:
+Inside your `scripts.js` file now add this bit within the document ready function:
 
 ```javascript
-$(".image_1").click(function() {
+$(document).ready(function() {
+    $(".image_1").click(function() {
 
     });
+});
 ```
 
 If we break this down there are several parts to even this small bit of code. `$(".image_1")` means that using JQuery we're going to look for an interaction with any page element with a class of "image_1". The `$` is simply a much shorter way of saying `jQuery` which you'll be seeing a lot in this lesson.
