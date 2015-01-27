@@ -67,9 +67,19 @@ When a user clicks on one of the 6 images, we're going to make the top row of im
 </div>
 ```
 
+Now that we have the "hide_this" class we can use, let's add an event listener.
+
+```javascript
+$(".image_1").click(function() {
+    $(".hide_this").hide();
+});
+```
+
+Check it out in the browser!
+
 ##Complete the Functionality
 
-Now let's create some content that we want to see when we click the top left hand image. Go back to your `index.html` file and place everything inside of the `<div id=click_image>` and `</div>` tags where you see it in the code snippet below.
+Now let's create some content that we want to appear when we click the top left hand image. Go back to your `index.html` file and place everything inside of the `<div id=click_image>` and `</div>` tags where you see it in the code snippet below.
 
 ```html
 <div class="col-md-6">
@@ -85,9 +95,18 @@ Now let's create some content that we want to see when we click the top left han
     </div>
 ```
 
+Now let's update scripts.js to include a bit about showing the replacement row of images.
+
+```javascript
+$(".image_1").click(function() {
+    $(".hide_this").hide();
+    $("#click_image").show();
+});
+```
+
 ##More JQuery Functions
 
-You might have noticed by now that, while you can click to make the hidden image replace the original, clicking again will not swap them back. This is a relatively simple matter of reversing our JQuery. We have all the infrastructure we need in the tags, classes, and ids that we need in our HTML already. Place this `.click()` in its place on the `scripts.js` page between the first and second closing `});`.
+You might have noticed by now that, while you can click to make the hidden image replace the original, clicking again will not swap them back. This is a relatively simple matter of reversing our JQuery. We have all the infrastructure we need in the tags, classes, and ids that we need in our HTML already. Place this `.click()` in its place on the `scripts.js` page immediately following the previous code you wrote.
 
 ```javascript
 $("#click_image").click(function() {
@@ -95,7 +114,7 @@ $("#click_image").click(function() {
     $("#click_image").hide();
 });
 ```
-This should be all that's required to impliment the "return click" functionality that was previously lacking.
+This should be all that's required to impliment the "return click" functionality that was previously lacking. Now when a user clicks an image, the replacement top row will appear. If they click the top row of images again, it will go back to the original images.
 
 
 ##Adjust the Font Size on the Fly
