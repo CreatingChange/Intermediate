@@ -183,7 +183,19 @@ Wow! Much bigger.
 
 ###Making It Relatively Bigger
 
-So what if we want the text to get bigger than it was before, not all uniformly huge?
+So what if just we want the text to get bigger than it was before, not uniformly huge?
+
+Instead of making everything 50 pixels, we need a way to reference the font size of each thing in the container and increase it slightly. We need to write a function.
+
+First we want to get the font size of each item in the container. The way we refer to "each item" in this case is using `this`. We'll get the font size of each item like so: `$(this).css("font-size")`, which will give us a string.
+
+The `.css()` function, like `.show()` and `.hide()` allow us to alter something; in this case the value of a css selector. We're telling it to alter the `font-size` selector that we had previously added to `styles.css`.
+
+What's a string? Let's take a little detour here. Javascript holds data in a few different ways. We'll be using strings and integers today. A string holds data in text form. Here are some strings: "hello world", "Creating Change is awesome!", "42". Here are some integers: 4, 8, 15, 16, 23, 42. Notice that 42 can be written as a string or as an integer. But standard operations like addition, subtraction, and multiplication only have meaning when applied to 42 as an integer. If you try to "add" two strings (or a string and an integer), then they just get concatenated (joined together end-to-end). For example, if you added together two integers like 5 + 3, you get 8. But if you "add" together two the two strings "5" + "3", you get "53".
+
+Ok, so we know how to get the font size of each thing in the container, but it's a string. We need to turn it into an integer so that we can add 1 to it and make it larger. We can use [parseInt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) to turn whatever that string is into an integer. So now we've got `parseInt($(this).css("font-size"))` and we can add 1 to it.
+
+We are getting so close. So now we have a new font size as an integer that we want to apply. It has to take the same form as when we used "50px" (a string), so we have a little more manipulation to do. Let's concatenate our number with "px" and send it off to be applied as a new font-size.
 
 ```javascript
 $(".font-adjust").click(function() {
@@ -193,13 +205,9 @@ $(".font-adjust").click(function() {
 });
 ```
 
-That gets a bit more complicated than before, so let's take a look. The line with the `.click` function works exactly as before. It's looking for a click activation on something with the class `font-size` and then executing the code that follows.
+We need the word "return" to complete the computation and send the resulting value.
 
-The next line uses the `.css()` function which, like `.show()` and `.hide()` allow us to alter something; in this case the value of a css selector. We're telling it to alter the `font-size` selector that we had previously added to `styles.css`.
-
-At this point, I need help explaining "this" to new coders! Help!
-
-Now if you reload your page you'll see that our "plus" button will increase the font size on the entire page! The problem you'll run into if you poke around for a minute is that the "minus" button doesn't work. It increases font size too! So let's make some changes.
+Now if you reload your page you'll see that our "plus" button will increase the font size on the entire page! The problem you'll run into if you poke around for a minute is that the "minus" button doesn't work. It increases font size too! Before we fix that, see if you or your partner can explain why that's happening.
 
 ###Button Differentiation
 
