@@ -191,7 +191,7 @@ First we want to get the font size of each item in the container. The way we ref
 
 The `.css()` function, like `.show()` and `.hide()` allow us to alter something; in this case the value of a css selector. We're telling it to alter the `font-size` selector that we had previously added to `styles.css`.
 
-What's a string? Let's take a little detour here. Javascript holds data in a few different ways. We'll be using strings and integers today. A string holds data in text form. Here are some strings: "hello world", "Creating Change is awesome!", "42". Here are some integers: 4, 8, 15, 16, 23, 42. Notice that 42 can be written as a string or as an integer. But standard operations like addition, subtraction, and multiplication only have meaning when applied to 42 as an integer. If you try to "add" two strings (or a string and an integer), then they just get concatenated (joined together end-to-end). For example, if you added together two integers like 5 + 3, you get 8. But if you "add" together two the two strings "5" + "3", you get "53".
+What's a string? Let's take a little detour here. Javascript holds data in a few different ways. We'll be using [strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) and [integers] today. A string holds data in text form. Here are some strings: "hello world", "Creating Change is awesome!", "42". Here are some integers: 4, 8, 15, 16, 23, 42. Notice that 42 can be written as a string or as an integer. But standard operations like addition, subtraction, and multiplication only have meaning when applied to 42 as an integer. If you try to "add" two strings (or a string and an integer), then they just get concatenated (joined together end-to-end). For example, if you added together two integers like 5 + 3, you get 8. But if you "add" together two the two strings "5" + "3", you get "53".
 
 Ok, so we know how to get the font size of each thing in the container, but it's a string. We need to turn it into an integer so that we can add 1 to it and make it larger. We can use [parseInt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) to turn whatever that string is into an integer. So now we've got `parseInt($(this).css("font-size"))` and we can add 1 to it.
 
@@ -217,7 +217,7 @@ Go ahead and change the `font-size` classes on your buttons to what you see belo
 <button type="button" class="btn btn-default navbar-btn font-size-down">-</button>
 <button type="button" class="btn btn-default navbar-btn font-size-up">+</button>
 ```
-Because we need each button to do something different, we'll need a different bit of JQuery for each button. Edit your most recent JQuery code in the `scripts.js` file to hook onto `.font-size-up` instead of `.font-size`. Now copy that code and paste it right before the final closing brace in `scripts.js`. We'll need to change just a couple of things.
+Because we need each button to do something different, we'll need a different bit of JQuery for each button. Edit your most recent JQuery code in the `scripts.js` file to hook onto `.font-size-up` instead of `.font-adjust`. We'll be doing something very similar for `.font-size-down` so copy that code and paste it right before the final closing brace in `scripts.js`. We'll need to change just a couple of things so it looks like this.
 
 ```javascript
 $(".font-size-down").click(function() {
