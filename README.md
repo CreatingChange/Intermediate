@@ -93,7 +93,9 @@ Check it out in the browser!
 
 ##Complete the Functionality
 
-Now let's create some content that we want to appear when we click the top left hand image. Go back to your `index.html` file and place everything inside of the `<div id=click_image>` and `</div>` tags where you see it in the code snippet below.
+Now let's create some content that we want to appear when we click the top left hand image. Let's get a replacement image. On the top of this page (by README.md), save rsz_trans_symbol.jpg by right-clicking it and downloading it. Save it in your img folder.
+
+Go back to your `index.html` file and place everything inside of the `<div id=click_image>` and `</div>` tags where you see it in the code snippet below.
 
 ```html
 <div class="col-md-6">
