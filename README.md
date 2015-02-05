@@ -29,7 +29,7 @@ If you'd like to learn more about why we need this, [JQuery has documentation](h
 
 ##Writing Code
 
-Open your `index.html` file in Sublime and put the following HTML right inside `<head>` tags.
+Open your `index.html` file in Sublime and put the following HTML right inside `<head>` tags. Don't copy and paste any of the code on this tutorial. Typing it out for yourself will significantly increase your learning.
 
 ```html
 <script src="js/jquery-1.11.2.js"></script>
