@@ -1,50 +1,55 @@
 ##Getting Started
 
-Go to the [Project Folder](https://github.com/CreatingChange/Beginner) and click on the "Download ZIP" button in the right hand column. Navigate to where your computer has downloaded this file.
+Go to the [Beginner Project](https://github.com/CreatingChange/Beginner) and click on the "Download ZIP" button in the right hand column. Navigate to where your computer has downloaded this file.
 
-Double click on the new Zip file so that it will unzip and then move that folder into a location where you want to store your project. I have a folder I call "Code".
+Double click on the downloaded "Beginner-master" Zip file so that it will unzip, then move that folder into a location where you want to store your project. I have a folder I call "Code". You also may want to rename the "Beginner-master" folder to reflect the name of the website you're working on today.
 
 Next we need a program to edit text. Download [Sublime](www.sublimetext.com) and open it. There are many text editors available; this is just one that we like.
 
-Open your project folder in Sublime by right clicking it and selecting open with. In Sublime, you should see your project folder and your css folder.
+Run Sublime, select the "open" menu option, select your project folder ("Beginner-master" or whatever you renamed it), and select "open". You should see the Beginner-master folder, which includes several folders and files.
 
 Continue by [downloading JQuery](http://jquery.com/download/) and choose the uncompressed, development version, 1.11.2. This should download to the same place the project did.
 
-Create a few folder inside your project directory called `js` and put your newly downloaded JQuery file in that folder. While you're there, create a new, empty file called `scripts.js`. This is where all of your Javascript and JQuery will go.
+Create a few folder inside your project folder called `js` and put your newly downloaded JQuery file in that folder. While you're there, create a new, empty file called `scripts.js`. This is where all of your Javascript and JQuery will go.
 
+Finally, open index.html in your browser and check out the simple website that the Beginner group is creating. We will be taking it to the next level by adding interactivity.
 
 ##What is Javascript?
 Javascript is a programming language that's built-in to web browsers. It enables a user to interact with a website (and vice versa). In Javascript, you can do all kinds of basic programming logic, like loops and if statements. While incredibly fun and interesting, that kind of programming logic is a bit harder to find a practical use for when building a simple website. That's why today we'll be focusing on the interactive potential of Javascript using JQuery, a Javascript library that makes it easier to use. If you want to learn more about Javascript as a programming language, there are many online resources available, including [Code Academy](http://www.codecademy.com/en/tracks/javascript).
 
+The first thing we're going to do is prepare our scripts.js file. We need to tell it to run our Javascript code only after the HTML has been read and the page is ready to be manipulated by user interaction. So all of the Javascript we'll be writing in this lesson will be within this function in scripts.js.
+
+```javascript
+$(document).ready(function() {
+
+});
+```
+
+If you'd like to learn more about why we need this, [JQuery has documentation](http://learn.jquery.com/using-jquery-core/document-ready/) that tells us that the function will be run when the [Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) is ready.
+
 ##Writing Code
 
-Open your `index.html` file in Sublime and put the following HTML right inside `<head>` tags.
+Open your `index.html` file in Sublime and put the following HTML right inside `<head>` tags. Don't copy and paste any of the code on this tutorial. Typing it out for yourself will significantly increase your learning.
 
 ```html
-<script src="../js/jquery-1.11.2.js"></script>
-<script src="../js/scripts.js"></script>
+<script src="js/jquery-1.11.2.js"></script>
+<script src="js/scripts.js"></script>
 ```
 
 These tell our HTML where to find the javascript resources we're going to provide both from our code and JQuery. It's important that our own `scripts.js` file goes after jQuery, as it will rely on jQuery functionality that must be loaded first.
 
 Now open your `scripts.js` file in Sublime as well.
 
-Let's use some JQuery to interact with an image element on our page. First let's take a look at how the images on the page are coded in the HTML.
+Let's use some JQuery to interact with an image element on our page. Elements like `<img>` tags can have attributes assigned to them through class and id values. These let us locate a specific element and use Javascript and JQuery to interact with them. In index.html, note that all 6 of the images hava a class of "image_1". We can then reference that class when we're writing our Javascript code.
 
-```html
-<div class="row">
-    <div class="hide_this">
-        <img class="image_1" src="img/rsz_image_1.jpg" alt="Are you a boy or girl? No.">
-        <img class="image_1" src="img/rsz_image_1.jpg" alt="Are you a boy or girl? No.">
-    </div>
-```
-
-Elements like `<img>` tags can have attributes assigned to them through class and id values. These let us locate a specific element and use Javascript and JQuery to interact with them. Inside your `scripts.js` file now type:
+Inside your `scripts.js` file now add this bit within the document ready function:
 
 ```javascript
-$(".image_1").click(function() {
+$(document).ready(function() {
+    $(".image_1").click(function() {
 
     });
+});
 ```
 
 If we break this down there are several parts to even this small bit of code. `$(".image_1")` means that using JQuery we're going to look for an interaction with any page element with a class of "image_1". The `$` is simply a much shorter way of saying `jQuery` which you'll be seeing a lot in this lesson.
@@ -53,19 +58,44 @@ When locating or styling elements a period is used for classes and a pound sign 
 
 The next section, the `.click(function()` section says what specific action to listen for. In this case we're looking for the cursor to click on an element but many different options exist including:
 
-    * `.hover()`
-    * `.dblclick()`
-    * `.show()`
-    * `.focus()`
-    * `.keypress()`
+<ul>
+    <li>.hover()</li>
+    <li>.dblclick()</li>
+    <li>.show()</li>
+    <li>.focus()</li>
+    <li>.keypress()</li>
+</ul>
 
 I bet you already have some idea what a lot of those do!
 
 The empty line between the `{` and the `}` is where we'll be placing the code that tells our site *what* to do when it "hears" the even happen. These collectively are called *Event Listeners* or *Event Handlers*.
 
+When a user clicks on one of the 6 images, we're going to make the top row of images disappear. In order to do that, let's assign just the top row of images on the page to a class called "hide_this".
+
+```html
+<div class="row">
+    <div class="hide_this">
+        <img class="image_1" src="img/rsz_image_1.jpg" alt="Are you a boy or girl? No.">
+        <img class="image_1" src="img/rsz_image_1.jpg" alt="Are you a boy or girl? No.">
+    </div>
+</div>
+```
+
+Now that we have the "hide_this" class we can use, let's add an event listener.
+
+```javascript
+$(".image_1").click(function() {
+    $(".hide_this").hide();
+});
+```
+
+Check it out in the browser!
+
 ##Complete the Functionality
 
-Now let's create some content that we want to see when we click the top left hand image. Go back to your `index.html` file and place everything inside of the `<div id=click_image>` and `</div>` tags where you see it in the code snippet below.
+Now let's create some content that we want to appear when we click the top left hand image. Let's get a replacement image. On the top of this page (by README.md), save rsz_trans_symbol.jpg by right-clicking it and downloading it. Save it in your img folder.
+
+Go back to your `index.html` file and place everything inside of the `<div id=click_image>` and `</div>` tags where you see it in the code snippet below.
 
 ```html
 <div class="col-md-6">
@@ -81,9 +111,20 @@ Now let's create some content that we want to see when we click the top left han
     </div>
 ```
 
+Now let's update scripts.js to include a bit about showing the replacement row of images.
+
+```javascript
+$(".image_1").click(function() {
+    $(".hide_this").hide();
+    $("#click_image").show();
+});
+```
+
+Remember that the hash is used in front of "click_image" because "click_image" is an ID, not a class. With your partner, see if you can talk through step-by-step what's going on when the page loads and an image is clicked on.
+
 ##More JQuery Functions
 
-You might have noticed by now that, while you can click to make the hidden image replace the original, clicking again will not swap them back. This is a relatively simple matter of reversing our JQuery. We have all the infrastructure we need in the tags, classes, and ids that we need in our HTML already. Place this `.click()` in its place on the `scripts.js` page between the first and second closing `});`.
+You might have noticed by now that, while you can click to make the hidden image replace the original, clicking again will not swap them back. This is a relatively simple matter of reversing our JQuery. We have all the infrastructure we need in the tags, classes, and ids that we need in our HTML already. Place this `.click()` in its place on the `scripts.js` page immediately following the previous code you wrote, but still wrapped within the document ready function.
 
 ```javascript
 $("#click_image").click(function() {
@@ -91,7 +132,7 @@ $("#click_image").click(function() {
     $("#click_image").hide();
 });
 ```
-This should be all that's required to impliment the "return click" functionality that was previously lacking.
+This should be all that's required to impliment the "return click" functionality that was previously lacking. Now when a user clicks an image, the replacement top row will appear. If they click the top row of images again, it will go back to the original images.
 
 
 ##Adjust the Font Size on the Fly
@@ -105,13 +146,13 @@ First, let's physically add the buttons to our navbar. Find the section of the H
       <li class="active"><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
-      </ul>
+    </ul>
 </div>
 ```
-Once you've found it, add this bit of HTML.
+Once you've found it, at the end of it, insert this bit of HTML. (It should still be within the `<div class="container-fluid"` but outside of `div class="navbar-header"`). We're adding some text and two butons, one labeled with a minus and the other with a plus.
 
 ```html
-<div class="navbar-right font-size">
+<div class="navbar-right font-adjust">
     <p class="navbar-text">Adjust Font Size</p>
     <button type="button" class="btn btn-default navbar-btn">-</button>
     <button type="button" class="btn btn-default navbar-btn">+</button>
@@ -126,30 +167,49 @@ The `<p>` tag right after the above `<div>` is simply a label for our buttons so
 If you look at the live version of your page at the moment, you'll see that your second button is hugged right up against the far right side of the navabar. Let's fix that quickly. Go into your `styles.css` file and add the code below:
 
 ```css
-.font-size {
+.font-adjust {
     margin-right: 10px;
 }
 ```
 
 ###Button Functionality
 
-Now let's add some actual JQuery functionality to our buttons. Like before, we'll need to grab onto some sort of class or id and then add the functionality.
+Now let's add some actual JQuery functionality to our buttons. Like before, we'll need to grab onto some sort of class or id and then add the functionality. Let's add a click event whenever someone clicks on something with the class "font-adjust". That part is like before. Now when that happens and the code inside the function is run, instead of showing or hiding something, we're going to change the css style of all text within the container class. Let's change it to something really big, like 50 pixels.
 
 ```javascript
-$(".font-size").click(function() {
+$(".font-adjust").click(function() {
+    $(".container").css("font-size", "50px");
+});
+```
+Wow! Much bigger.
+
+###Making It Relatively Bigger
+
+So what if just we want the text to get bigger than it was before, not uniformly huge?
+
+Instead of making everything 50 pixels, we need a way to reference the font size of each thing in the container and increase it slightly. We need to write a function.
+
+First we want to get the font size of each item in the container. The way we refer to "each item" in this case is using `this`. We'll get the font size of each item like so: `$(this).css("font-size")`, which will give us a string.
+
+The `.css()` function, like `.show()` and `.hide()` allow us to alter something; in this case the value of a css selector. We're telling it to alter the `font-size` selector that we had previously added to `styles.css`.
+
+What's a string? Let's take a little detour here. Javascript holds data in a few different ways. We'll be using [strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) and integers today. A string holds data in text form. Here are some strings: "hello world", "Creating Change is awesome!", "42". Here are some integers: 4, 8, 15, 16, 23, 42. Notice that 42 can be written as a string or as an integer. But standard operations like addition, subtraction, and multiplication only have meaning when applied to 42 as an integer. If you try to "add" two strings (or a string and an integer), then they just get concatenated (joined together end-to-end). For example, if you added together two integers like 5 + 3, you get 8. But if you "add" together the two strings "5" + "3", you get "53".
+
+Ok, so we know how to get the font size of each thing in the container, but it's a string. We need to turn it into an integer so that we can add 1 to it and make it larger. We can use [parseInt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) to turn whatever that string is into an integer. So now we've got `parseInt($(this).css("font-size"))` and we can add 1 to it.
+
+We are getting so close. So now we have a new font size as an integer that we want to apply. It has to take the same form as when we used "50px" (a string), so we have a little more manipulation to do. Let's concatenate our number with "px" and send it off to be applied as a new font-size.
+
+```javascript
+$(".font-adjust").click(function() {
     $(".container").css("font-size", function() {
         return parseInt($(this).css('font-size')) + 1 + 'px';
     });
 });
 ```
 
-That gets a bit more complicated than before, so let's take a look. The line with the `.click` function works exactly as before. It's looking for a click activation on something with the class `font-size` and then executing the code that follows.
+We need the word "return" to complete the computation and send the resulting value.
 
-The next line uses the `.css()` function which, like `.show()` and `.hide()` allow us to alter something; in this case the value of a css selector. We're telling it to alter the `font-size` selector that we had previously added to `styles.css`.
-
-At this point, I need help explaining "this" to new coders! Help!
-
-Now if you reload your page you'll see that our "plus" button will increase the font size on the entire page! The problem you'll run into if you poke around for a minute is that the "minus" button doesn't work. It increases font size too! So let's make some changes.
+Now if you reload your page you'll see that our "plus" button will increase the font size on the entire page! The problem you'll run into if you poke around for a minute is that the "minus" button doesn't work. It increases font size too! Before we fix that, see if you or your partner can explain why that's happening.
 
 ###Button Differentiation
 
@@ -159,7 +219,7 @@ Go ahead and change the `font-size` classes on your buttons to what you see belo
 <button type="button" class="btn btn-default navbar-btn font-size-down">-</button>
 <button type="button" class="btn btn-default navbar-btn font-size-up">+</button>
 ```
-Because we need each button to do something different, we'll need a different bit of JQuery for each button. Edit your most recent JQuery code in the `scripts.js` file to hook onto `.font-size-up` instead of `.font-size`. Now copy that code and paste it right before the final closing brace in `scripts.js`. We'll need to change just a couple of things.
+Because we need each button to do something different, we'll need a different bit of JQuery for each button. Edit your most recent JQuery code in the `scripts.js` file to hook onto `.font-size-up` instead of `.font-adjust`. We'll be doing something very similar for `.font-size-down` so copy that code and paste it right before the final closing brace in `scripts.js`. We'll need to change just a couple of things so it looks like this.
 
 ```javascript
 $(".font-size-down").click(function() {
