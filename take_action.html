@@ -3,8 +3,8 @@
       <title>Creating Change Website</title>
       <link rel="stylesheet" href="css/bootstrap.css">
       <link rel="stylesheet" href="css/styles.css">
-      <script src="../js/jquery-1.11.2.js"></script>
-      <script src="../js/scripts.js"></script>
+      <script src="js/jquery-1.11.2.js"></script>
+      <script src="js/scripts.js"></script>
   </head>
   <body>
     <div class="container">
@@ -28,15 +28,17 @@
       <p>Our cause is great and important! We need your help to convince your representatives to care about our cause too and use the institutional power of --Insert Government Here-- to affect change. Fill out the form below and you'll be redirected to a letter we'll email on your behalf to your representatives.</p>
       <form>
         <div class="form-group">
-          <input type="text" class="form-control" name="name" id="name" value="Name">
+          <input type="text" class="form-control" name="name" id="name" >
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" name="state-code" id="state-code" value="State Abbv.">
+          <input type="text" class="form-control" name="state-code" id="state-code" >
         </div>
         <div class="form-group">
-          <input class="btn btn-default mail" class="form-control" type="submit" name="submit" value="Submit">
+          <input class="btn btn-default mail" class="form-control" type="submit" name="submit">
         </div>
       </form>
+     <p id="your_senator"></p>
     </div>
+    
   </body>
 </html>
