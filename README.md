@@ -170,4 +170,96 @@ $(".font-size-down").click(function() {
 ```
 You'll notice that this bit hooks into the `.font-size-down` class that you added just a few minutes ago to the `index.html` file. Finally, the line that returns the changed number of pixels for the font size needs to now subtract one pixel instead of add one so that our button will decrease the page's font size.
 
+Potentially add more content here!
+
+##Conclusions
+
+We hope at this point that it's clear what relatively simple javascript/JQuery functions can do for your basic web page. They have the potential to add all kinds of functionality as well as address increasingly complex web accessibility issues. You'll find resources to continue adding to your web knowledge below. Feel free to use them or ask us a few questions at the end of the presentation.
+
+##Taking Action
+
+Coding and web applications have a lot to offer to social justice movements in terms of tools. Let's figure out how to make it easy for an ally to contact their US Senators about our issues.
+
+In your `index.html` file, find where all the navbar links are created in their `<li>` tags and add one more.
+
+```html
+<li><a href="take_action.html">Take Action</a></li>
+```
+
+Now create a `take_action.html` file the same directory as `about.html`, `contact.html`, and `index.html`.
+
+Into that `take_action.html` file, copy this:
+
+```html
+<html lang="en">
+  <head>
+      <title>Creating Change Website</title>
+      <link rel="stylesheet" href="css/bootstrap.css">
+      <link rel="stylesheet" href="css/styles.css">
+      <script src="../js/jquery-1.11.2.js"></script>
+      <script src="../js/scripts.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <!-- <a class="navbar-brand">Logo goes here</a> -->
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="navbar-right font-adjust">
+            <p class="navbar-text">Adjust Font Size</p>
+            <button type="button" class="btn btn-default navbar-btn font-size-down">-</button>
+            <button type="button" class="btn btn-default navbar-btn font-size-up">+</button>
+          </div>
+        </div>
+      </nav>
+      <p>Our cause is great and important! We need your help to convince your representatives to care about our cause too and use the institutional power of --Insert Government Here-- to affect change. Fill out the form below and you'll be redirected to a letter we'll email on your behalf to your representatives.</p>
+    </div>
+  </body>
+</html>
+```
+
+This is all the structural html from the index page. We've helpfully cut out all the images, text, the header link to this page, ensured that the indentation is clean, and added a text message for users with a `<p>` tag. Into this page we're going to add some forms. Forms are used all over the web from logins to profile pages to address forms. They're a basic component of web development. When building a form in just HMTL you'll use the `<input>` tag.
+
+A proper input tag will have a few components. Here's what ours will look like:
+
+```html
+<form>
+  <div class="form-group">
+    <input type="text" class="form-control" name="name" id="name" value="Name">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" name="state-code" id="state-code" value="State Abbv.">
+  </div>
+  <div class="form-group">
+    <input class="btn btn-default mail" class="form-control" type="submit" name="submit" value="Submit">
+  </div>
+</form>
+```
+There are a few things worth talking about here. The first is that it's a good idea to wrap your `<input>` tags inside a `<form>` tag. This is one place you can add a class or id to help you style just these forms.
+
+In addition, you've noticed that any indivitual `<input>` tag has a few values associated with it. The type is required. "Text" is used for text fields, "submit" for your actual submission buttons, and there are other useful ones out there. the name and id should generally match and be something specific. Something like "form3" is generally not useful because these are often used as hooks to do other, more complicated things with forms on a page and need to be easily identified. Finally, the value is the literal text that will appear as a placeholder in the text box.
+
+The `<div>` elements as well as the classes, both on the div and the input tags themselves are used for styling by bootstrap. They have predefined styles for both "form-group" and "form-control" so that individual forms receive reasonable spacing, etc. The one thing that we should know is that anything styled with bootstrap's "form-group" class will receive the CSS style `width: 100%`. There are a number of ways to fix this. The easiest (and worst) of the options is what we'll do for time. Just go to your `styles.css` file and add this code.
+
+```css
+.form-group {
+    width: 30%;
+}
+```
+This will override bootstrap's default styling for things with `class="form-group"` attached so that they have a width of 30% instead. Feel free to play with the width of your forms. A better and more robust method would be to give these forms their own class we could style in the same way so that all other things with `class="form-group"` would remain unaffected.
+
+
+
+
+
+
+
+
+
 

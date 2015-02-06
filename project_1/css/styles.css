@@ -46,3 +46,7 @@ p {
 .font-adjust {
     margin-right: 10px;
 }
+
+.form-group {
+    width: 30%;
+}
