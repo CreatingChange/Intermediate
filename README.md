@@ -314,7 +314,7 @@ A proper input tag will have a few components. Here's what ours will look like:
     <input type="text" class="form-control" name="state-code" id="state-code" value="State Abbv.">
   </div>
   <div class="form-group">
-    <input class="btn btn-default mail" class="form-control" type="submit" name="submit" value="Submit">
+    <input class="btn btn-default mail form-control" type="submit" name="submit" value="Submit">
   </div>
 </form>
 ```
