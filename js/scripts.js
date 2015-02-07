@@ -22,22 +22,22 @@ $(document).ready(function() {
     });
 });
 
- 
 
-function match_senator(state) {
-   var senetors = {
-    "OR" : "Jeff Merkley",
-  };
-}
 
-$(function) {
-  $('form#button').submit(function() {
-    $('form').hide()
-    var state = $(input).val()
-    var lookup = match_senator(state)
-    return false
-  })
-});
+// function match_senator(state) {
+//    var senetors = {
+//     "OR" : "Jeff Merkley",
+//   };
+// }
+
+// $(function) {
+//   $('form#button').submit(function() {
+//     $('form').hide()
+//     var state = $(input).val()
+//     var lookup = match_senator(state)
+//     return false
+//   })
+// });
 
 
 
