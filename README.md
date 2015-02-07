@@ -14,6 +14,13 @@ Create a few folder inside your project folder called `js` and put your newly do
 
 Finally, open index.html in your browser and check out the simple website that the Beginner group is creating. We will be taking it to the next level by adding interactivity.
 
+
+##Embedding Twitter Feed
+
+Your personal or organization twitter feed is a really good way to share all the latest relevant news. It's pretty easy to embed this information into your website.  Below is a short tutorial how to access that information.
+
+
+
 ##What is Javascript?
 Javascript is a programming language that's built-in to web browsers. It enables a user to interact with a website (and vice versa). In Javascript, you can do all kinds of basic programming logic, like loops and if statements. While incredibly fun and interesting, that kind of programming logic is a bit harder to find a practical use for when building a simple website. That's why today we'll be focusing on the interactive potential of Javascript using JQuery, a Javascript library that makes it easier to use. If you want to learn more about Javascript as a programming language, there are many online resources available, including [Code Academy](http://www.codecademy.com/en/tracks/javascript).
 

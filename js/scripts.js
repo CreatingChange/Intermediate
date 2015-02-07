@@ -27,6 +27,7 @@ $(document).ready(function() {
 $(function() {
   $('.mail').click(function() {
   $('form').hide();
+
    Object.prototype.getKey = function(value){
     for(var key in this){
       if(this[key] == value){
@@ -37,12 +38,11 @@ $(function() {
     };
 
     var senators = {
-    "Jeff Merkley": 'OR',
+    "Jeff Merkley & Ron Wyden": 'OR',
   };
 
   var state = $('#state-code').val();
   var key = senators.getKey(state);
-  console.log(key); // EL
   $('#your_senator').append(key);
   return false;
   });
