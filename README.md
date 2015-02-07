@@ -293,6 +293,8 @@ Into that `take_action.html` file, copy this:
 
 This is all the structural html from the index page. We've helpfully cut out all the images, text, the header link to this page, ensured that the indentation is clean, and added a text message for users with a `<p>` tag. Into this page we're going to add some forms. Forms are used all over the web from logins to profile pages to address forms. They're a basic component of web development. When building a form in just HMTL you'll use the `<input>` tag.
 
+##Building the Forms
+
 A proper input tag will have a few components. Here's what ours will look like:
 
 ```html
@@ -312,15 +314,19 @@ There are a few things worth talking about here. The first is that it's a good i
 
 In addition, you've noticed that any indivitual `<input>` tag has a few values associated with it. The type is required. "Text" is used for text fields, "submit" for your actual submission buttons, and there are other useful ones out there. the name and id should generally match and be something specific. Something like "form3" is generally not useful because these are often used as hooks to do other, more complicated things with forms on a page and need to be easily identified. Finally, the value is the literal text that will appear as a placeholder in the text box.
 
-The `<div>` elements as well as the classes, both on the div and the input tags themselves are used for styling by bootstrap. They have predefined styles for both "form-group" and "form-control" so that individual forms receive reasonable spacing, etc. The one thing that we should know is that anything styled with bootstrap's "form-group" class will receive the CSS style `width: 100%`. There are a number of ways to fix this. The easiest (and worst) of the options is what we'll do for time. Just go to your `styles.css` file and add this code.
+##Form Styling
 
-```css
-.form-group {
-    width: 30%;
-}
-```
-This will override bootstrap's default styling for things with `class="form-group"` attached so that they have a width of 30% instead. Feel free to play with the width of your forms. A better and more robust method would be to give these forms their own class we could style in the same way so that all other things with `class="form-group"` would remain unaffected.
+The `<div>` elements, `<form>` element, and the classes, both on the div and the input tags themselves are used for styling by bootstrap. They have predefined styles for both "form-group" and "form-control" so that individual forms receive reasonable spacing, etc. The one thing that we should know is that anything styled with bootstrap's "form-group" class will receive the CSS style `width: 100%`. There are a number of ways to fix this. The easiest (and worst) of the options would be to overrride bootstrap's definition of "form-group" and force it to be a width like 30% in our `styles.css` file. This is less than ideal  for a number of reasons, one of which is that that will effect everything on every page in your project that usess that fairly common boostrap class. Instead we'll be a little tricky and redefine what counts as "width:100%"" for these form items. Add `class="col-md-4 class-col-md-offset-4" to the form tag.
 
+What this does is that it limits the space that the forms see within bootstrap's grid.
+
+##Bootstrap and the Grid
+
+Check out the grid system in [Bootstrap's own words](http://getbootstrap.com/2.3.2/scaffolding.html#fluidGridSystem)
+
+As you can tell, the system is based on 12 columns so it's not uncommon to see classes like the one above calling for an element to take a certain number of columns as its own space. This lets you accurately place elements side by side, above and below one another, etc. The "col-md-offset-4" says to leave 4 columns before placing this four column sized element, definied by "col-md-4", onto the page, resullting in forms that are centered.
+
+You can and should use "col-lg-x", "col-sm-x" etc. when working on large projects to remain responsive and have the ability to define how your project looks on different screen sizes. Boostrap itself has info about what qualifies as small, medium, large, etc. For now, we'll stick to medium for the sake of time.
 
 
 

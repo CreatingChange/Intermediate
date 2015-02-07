@@ -23,7 +23,6 @@ $(document).ready(function() {
 });
 
 
-
 $(function() {
   $('.mail').click(function() {
   $('form').hide();
@@ -47,10 +46,6 @@ $(function() {
   return false;
   });
 });
-
-
-
-
 
 
 
