@@ -43,6 +43,8 @@ $(function() {
   var state = $('#state-code').val();
   var key = senators.getKey(state);
   $('#your_senator').append(key);
+  $('#your-info').show();
+  $('#form-letter').append('<p>Insert form letter text here.</p>');
   return false;
   });
 });

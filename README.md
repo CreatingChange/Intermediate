@@ -129,6 +129,14 @@ $(".image_1").click(function() {
 
 Remember that the hash is used in front of "click_image" because "click_image" is an ID, not a class. With your partner, see if you can talk through step-by-step what's going on when the page loads and an image is clicked on.
 
+Additionally, we need to ensure that the bit of HTML that will be shown isn't initially. To do that, go to your `styles.css` and add the following:
+
+```css
+#click_image {
+    display: none;
+}
+```
+
 ##More JQuery Functions
 
 You might have noticed by now that, while you can click to make the hidden image replace the original, clicking again will not swap them back. This is a relatively simple matter of reversing our JQuery. We have all the infrastructure we need in the tags, classes, and ids that we need in our HTML already. Place this `.click()` in its place on the `scripts.js` page immediately following the previous code you wrote, but still wrapped within the document ready function.
@@ -320,6 +328,7 @@ The `<div>` elements, `<form>` element, and the classes, both on the div and the
 
 What this does is that it limits the space that the forms see within bootstrap's grid.
 
+
 ##Bootstrap and the Grid
 
 Check out the grid system in [Bootstrap's own words](http://getbootstrap.com/2.3.2/scaffolding.html#fluidGridSystem)
@@ -329,9 +338,11 @@ As you can tell, the system is based on 12 columns so it's not uncommon to see c
 You can and should use "col-lg-x", "col-sm-x" etc. when working on large projects to remain responsive and have the ability to define how your project looks on different screen sizes. Boostrap itself has info about what qualifies as small, medium, large, etc. For now, we'll stick to medium for the sake of time.
 
 
+##Contact your senator!
 
+In this section we are going write the code that will allow a person to enter their state abbreviation and find their senator.
 
-
+This function 
 
 
 

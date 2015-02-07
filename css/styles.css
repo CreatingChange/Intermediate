@@ -46,3 +46,11 @@ p {
 .font-adjust {
     margin-right: 10px;
 }
+
+#your-info {
+    display: none;
+}
+
+.form-group {
+    width: 30%;
+}
