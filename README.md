@@ -19,7 +19,7 @@ Finally, open index.html in your browser and check out the simple website that t
 
 Your personal or organization twitter feed is a really good way to share all the latest relevant news. It's pretty easy to embed this information into your website.  Below is a short tutorial how to access that information.
 
-
+Go to your orgs/personal twitter page. Make sure you are logged in. Click your avatar at the top of the page. Navigate to "Settings" in the dropdown menu. Then on the left side of the page, in the list find "Widgets". Create a New widget. This is where you will manage what your twitter feed will look like on any specific site.  Once your widget it created. There will be a few lines of code under the feed preview.  All you have to do is copy and paste this code into your site. And now your twitter feed is live for all of your people to see.
 
 ##What is Javascript?
 Javascript is a programming language that's built-in to web browsers. It enables a user to interact with a website (and vice versa). In Javascript, you can do all kinds of basic programming logic, like loops and if statements. While incredibly fun and interesting, that kind of programming logic is a bit harder to find a practical use for when building a simple website. That's why today we'll be focusing on the interactive potential of Javascript using JQuery, a Javascript library that makes it easier to use. If you want to learn more about Javascript as a programming language, there are many online resources available, including [Code Academy](http://www.codecademy.com/en/tracks/javascript).
